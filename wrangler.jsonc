@@ -1,5 +1,6 @@
 {
-  "name": "site-vitrine-locale",
+   // wrangler.jsonc
+  "name": "lunaa-studio",
   "compatibility_date": "2026-08-19",
   "assets": {
     "directory": "."
