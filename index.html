@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./assets/favicon-couleur.svg" type="image/svg+xml">
+<link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="./assets/favicon-512.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: #F5F1E8; color: #111111; font-family: Karla, system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  a { color: #9C5C2C; }
+  a:hover { color: #C97B3A; }
+  .footer-legal-link:hover { color: #C97B3A; }
+  ::selection { background: #C97B3A; color: #111111; }
+  @keyframes vlPulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.55); opacity: .35 } }
+  @keyframes vlFloat { 0%,100% { transform: translate3d(0,0,0) } 50% { transform: translate3d(0,-22px,0) } }
+  @keyframes vlShimmer { 0% { transform: translateX(-120%) } 100% { transform: translateX(320%) } }
+  @keyframes vlDash { to { stroke-dashoffset: 0 } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="width:100%;overflow-x:hidden;background:#F5F1E8;position:relative">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:transparent;pointer-events:none">
+    <div ref="{{ progressRef }}" style="height:100%;width:0%;background:#C97B3A;box-shadow:0 0 12px rgba(201,123,58,.5);transition:width .12s linear"></div>
+  </div>
+
+  <div aria-hidden="true" style="position:absolute;top:-160px;right:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(201,123,58,.30),rgba(201,123,58,0) 68%);filter:blur(6px);animation:vlFloat 13s ease-in-out infinite;pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;top:520px;left:-180px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 60% 40%,rgba(17,17,17,.14),rgba(17,17,17,0) 70%);filter:blur(4px);animation:vlFloat 17s ease-in-out infinite reverse;pointer-events:none"></div>
+
+  <header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(245,241,232,0);border-bottom:1px solid rgba(17,17,17,0);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease">
+    <div style="max-width:1080px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#111111">
+        <img src="./assets/icone-couleur.svg" alt="Lunaa Studio" width="34" height="34" style="display:block;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:rotate(-6deg) scale(1.08)">
+        <div style="font-family:Alegreya,serif;font-weight:700;font-size:20px;letter-spacing:-0.01em">Vitrine Locale</div>
+      </a>
+      <a href="#offre" style="position:relative;display:inline-flex;align-items:center;gap:9px;font-family:Karla,sans-serif;font-weight:700;font-size:15px;text-decoration:none;color:#111111;border-bottom:2px solid #C97B3A;padding-bottom:2px;transition:color .25s ease,transform .25s ease" style-hover="transform:translateY(-1px);color:#9C5C2C">
+        <span style="position:relative;display:inline-flex;width:8px;height:8px">
+          <span style="position:absolute;inset:0;border-radius:50%;background:#C97B3A;animation:vlPulse 2.4s ease-in-out infinite"></span>
+          <span style="position:absolute;inset:0;border-radius:50%;background:#C97B3A"></span>
+        </span>
+        Offre de lancement
+      </a>
+    </div>
+  </header>
+
+  <section id="top" style="max-width:820px;margin:0 auto;padding:44px 22px 52px;text-align:center;position:relative">
+    <div data-reveal="" data-delay="0" style="display:inline-block;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(17,17,17,.55);border:1px solid rgba(17,17,17,.18);border-radius:999px;padding:7px 14px;background:#FFFFFF">Sites internet pour commerçants</div>
+    <h1 data-reveal="" data-delay="90" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(34px,8.4vw,60px);line-height:1.04;letter-spacing:-0.02em;margin:22px 0 0;text-wrap:pretty">Vos clients vous cherchent avant de venir. S'ils ne vous trouvent pas, ils vont chez le voisin.</h1>
+    <p data-reveal="" data-delay="180" style="font-family:Karla,sans-serif;font-size:clamp(16px,4.3vw,20px);line-height:1.55;color:rgba(17,17,17,.72);margin:20px auto 0;max-width:560px;text-wrap:pretty">Je crée, héberge et référence le site internet des commerces indépendants des Hauts-de-France. Boulangers, coiffeurs, artisans, petits commerces.</p>
+    <div data-reveal="" data-delay="270" style="display:flex;flex-direction:column;gap:12px;align-items:stretch;margin:28px auto 0;max-width:400px">
+      <a href="#offre" style="position:relative;overflow:hidden;display:block;background:#C97B3A;color:#111111;text-decoration:none;font-family:Karla,sans-serif;font-weight:700;font-size:17px;padding:17px 22px;border-radius:12px;box-shadow:0 3px 0 #8A5220;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 6px 0 #8A5220,0 12px 24px rgba(138,82,32,.28)" style-active="transform:translateY(2px);box-shadow:0 1px 0 #8A5220">
+        <span style="position:absolute;top:0;left:0;width:38%;height:100%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.28),rgba(255,255,255,0));animation:vlShimmer 3.6s ease-in-out infinite;pointer-events:none"></span>
+        Voir l'offre de lancement
+      </a>
+      <span style="font-size:14px;color:rgba(17,17,17,.55);font-weight:500">3 places gratuites ce mois-ci · Hauts-de-France</span>
+    </div>
+  </section>
+
+  <section id="offre" style="padding:0 14px 52px;position:relative">
+    <div data-reveal="" style="max-width:760px;margin:0 auto;background:#111111;border-radius:22px;padding:clamp(22px,5.5vw,40px);color:#FFFFFF;border:2px solid #2A2A2A;box-shadow:0 24px 60px -30px rgba(17,17,17,.32);position:relative;overflow:hidden">
+      <div aria-hidden="true" style="position:absolute;top:-90px;right:-70px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,123,58,.20),rgba(201,123,58,0) 70%);animation:vlFloat 11s ease-in-out infinite;pointer-events:none"></div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;position:relative">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;background:#C97B3A;color:#111111;border-radius:999px;padding:6px 12px">Offre de lancement</span>
+        <span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.65)">Août 2026</span>
+      </div>
+      <h2 style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.6vw,40px);line-height:1.1;margin:0;letter-spacing:-0.015em;text-wrap:pretty;position:relative">3 places gratuites ce mois-ci pour les commerçants des Hauts-de-France.</h2>
+      <p style="font-family:Karla,sans-serif;font-size:clamp(16px,4.2vw,19px);line-height:1.6;color:rgba(255,255,255,.75);margin:18px 0 0;text-wrap:pretty;position:relative">Votre site est créé gratuitement, vous ne payez que l'hébergement à partir de <strong style="color:#C97B3A">15&nbsp;€/mois</strong>. En échange, vous acceptez de partager votre avis une fois le site en ligne.</p>
+
+      <div style="margin:26px 0 0;background:#1C1C1C;border:1px solid #2E2E2E;border-radius:14px;padding:18px;position:relative">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <span style="font-family:Alegreya,serif;font-weight:700;font-size:20px;color:#C97B3A">{{ placesLabel }}</span>
+          <span style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600">Mise à jour manuelle</span>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <sc-for list="{{ places }}" as="place" hint-placeholder-count="3">
+            <div data-bar="" data-bar-delay="{{ place.delay }}" data-bar-fill="{{ place.fill }}" style="flex:1;height:10px;border-radius:999px;background:#2E2E2E;overflow:hidden;position:relative">
+              <div data-bar-inner="" style="position:absolute;inset:0;width:0%;border-radius:999px;background:#2E2E2E;transition:width .8s cubic-bezier(.2,.8,.2,1)"></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px;position:relative">
+        <a href="{{ mailto }}" style="display:block;text-align:center;background:#C97B3A;color:#111111;text-decoration:none;font-family:Karla,sans-serif;font-weight:700;font-size:17px;padding:17px 22px;border-radius:12px;box-shadow:0 3px 0 #8A5220;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 6px 0 #8A5220,0 12px 26px rgba(201,123,58,.35)" style-active="transform:translateY(2px);box-shadow:0 1px 0 #8A5220">Réserver une place gratuite</a>
+        <span style="font-size:14px;color:rgba(255,255,255,.55);text-align:center">Un e-mail, une réponse de ma part sous 24&nbsp;h. Sans engagement.</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:900px;margin:0 auto;padding:12px 22px 56px">
+    <h2 data-reveal="" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;margin:0 0 8px;letter-spacing:-0.015em">De votre commerce à votre vitrine en ligne.</h2>
+    <p data-reveal="" data-delay="70" style="font-family:Karla,sans-serif;font-size:16px;line-height:1.55;color:rgba(17,17,17,.72);margin:0 0 26px;max-width:520px">Une méthode simple, sans jargon, pensée pour des commerçants qui n'ont jamais eu de site.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px">
+      <div data-reveal="" data-delay="0" style="background:#FFFFFF;border:1px solid rgba(17,17,17,.12);border-radius:16px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 18px 34px -22px rgba(17,17,17,.16);border-color:rgba(201,123,58,.45)">
+        <div style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;letter-spacing:-0.015em;color:#9C5C2C">01</div>
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:20px;margin:6px 0 8px;line-height:1.2">Échange & découverte</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(17,17,17,.72);margin:0">Un appel ou une visite dans votre commerce pour comprendre votre activité, sans jargon technique.</p>
+      </div>
+      <div data-reveal="" data-delay="80" style="background:#FFFFFF;border:1px solid rgba(17,17,17,.12);border-radius:16px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 18px 34px -22px rgba(17,17,17,.16);border-color:rgba(201,123,58,.45)">
+        <div style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;letter-spacing:-0.015em;color:#9C5C2C">02</div>
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:20px;margin:6px 0 8px;line-height:1.2">Démo concrète</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(17,17,17,.72);margin:0">Vous recevez une vraie maquette de votre site à consulter sur votre téléphone, avant toute mise en ligne.</p>
+      </div>
+      <div data-reveal="" data-delay="160" style="background:#FFFFFF;border:1px solid rgba(17,17,17,.12);border-radius:16px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 18px 34px -22px rgba(17,17,17,.16);border-color:rgba(201,123,58,.45)">
+        <div style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;letter-spacing:-0.015em;color:#9C5C2C">03</div>
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:20px;margin:6px 0 8px;line-height:1.2">Mise en ligne</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(17,17,17,.72);margin:0">Nom de domaine, hébergement, fiche Google : tout est pris en charge, vous n'avez rien à signer.</p>
+      </div>
+      <div data-reveal="" data-delay="240" style="background:#FFFFFF;border:1px solid rgba(17,17,17,.12);border-radius:16px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 18px 34px -22px rgba(17,17,17,.16);border-color:rgba(201,123,58,.45)">
+        <div style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;letter-spacing:-0.015em;color:#9C5C2C">04</div>
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:20px;margin:6px 0 8px;line-height:1.2">Suivi mensuel</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(17,17,17,.72);margin:0">Un changement d'horaires ou une nouvelle photo ? Un message suffit, je m'en occupe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="realisations" style="max-width:900px;margin:0 auto;padding:12px 22px 56px">
+    <div data-reveal="" style="font-size:13px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(17,17,17,.55)">Réalisations</div>
+    <h2 data-reveal="" data-delay="60" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;margin:10px 0 8px;letter-spacing:-0.015em">Ce que ça donne, concrètement</h2>
+    <p data-reveal="" data-delay="120" style="font-family:Karla,sans-serif;font-size:16px;line-height:1.55;color:rgba(17,17,17,.72);margin:0 0 26px;max-width:520px">Les sites créés pour des commerçants des Hauts-de-France, présentés ici au fil des mises en ligne.</p>
+
+    <!--
+      État vide : aucune réalisation publiée pour l'instant.
+      Pour ajouter une vraie réalisation, remplacer un bloc .vl-gallery-slot par :
+      <figure style="margin:0">
+        <img src="chemin-vers-capture.jpg" alt="Site créé pour [Nom du commerce]" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block;border:1px solid rgba(17,17,17,.12)">
+        <figcaption style="margin-top:10px;font-size:14px;color:rgba(17,17,17,.55)">Nom du commerce · Activité · Ville</figcaption>
+      </figure>
+    -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <div class="vl-gallery-slot" style="aspect-ratio:4/3;border:2px dashed rgba(201,123,58,.45);border-radius:16px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px">
+        <span style="font-size:14px;font-weight:600;color:rgba(17,17,17,.55)">Réalisation à venir</span>
+      </div>
+      <div class="vl-gallery-slot" style="aspect-ratio:4/3;border:2px dashed rgba(201,123,58,.45);border-radius:16px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px">
+        <span style="font-size:14px;font-weight:600;color:rgba(17,17,17,.55)">Réalisation à venir</span>
+      </div>
+      <div class="vl-gallery-slot" style="aspect-ratio:4/3;border:2px dashed rgba(201,123,58,.45);border-radius:16px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px">
+        <span style="font-size:14px;font-weight:600;color:rgba(17,17,17,.55)">Réalisation à venir</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:rgba(201,123,58,.10);border-top:1px solid rgba(17,17,17,.12);border-bottom:1px solid rgba(17,17,17,.12);padding:52px 22px">
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:start">
+      <div data-reveal="">
+        <image-slot id="fondateur" style="width:100%;max-width:320px;aspect-ratio:4/5" shape="rounded" radius="16" placeholder="Photo du fondateur (portrait, 4:5)"></image-slot>
+      </div>
+      <div>
+        <div data-reveal="" data-delay="60" style="font-size:13px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(17,17,17,.55)">Qui suis-je</div>
+        <h2 data-reveal="" data-delay="120" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;margin:10px 0 0;letter-spacing:-0.015em">Louis, basé à Lille</h2>
+        <p data-reveal="" data-delay="180" style="font-family:Karla,sans-serif;font-size:clamp(16px,4.2vw,18px);line-height:1.6;color:rgba(17,17,17,.72);margin:16px 0 0;text-wrap:pretty">Je suis seul à travailler sur votre site. Pas d'agence, pas d'intermédiaire, pas de ticket support à ouvrir : vous avez mon numéro et mon adresse e-mail, et c'est moi qui vous réponds.</p>
+        <p data-reveal="" data-delay="240" style="font-family:Karla,sans-serif;font-size:clamp(16px,4.2vw,18px);line-height:1.6;color:rgba(17,17,17,.72);margin:14px 0 0;text-wrap:pretty">Je travaille avec les commerces des Hauts-de-France, dans les villes et les villages autour de Lille. Je peux passer vous voir sur place.</p>
+        <a data-reveal="" data-delay="300" href="{{ mailto }}" style="display:inline-block;margin-top:20px;font-family:Karla,sans-serif;font-weight:700;font-size:16px;color:#9C5C2C;text-decoration:none;border-bottom:2px solid rgba(17,17,17,.20);padding-bottom:3px;transition:border-color .25s ease,transform .25s ease" style-hover="border-color:#C97B3A;transform:translateX(3px)">M'écrire directement</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:900px;margin:0 auto;padding:56px 22px">
+    <h2 data-reveal="" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;margin:0 0 8px;letter-spacing:-0.015em">Tarifs standards</h2>
+    <p data-reveal="" data-delay="70" style="font-family:Karla,sans-serif;font-size:16px;line-height:1.55;color:rgba(17,17,17,.72);margin:0 0 26px;max-width:540px">Ce sont les tarifs qui s'appliquent après la période de lancement. Les 3 places de ce mois-ci restent à 15&nbsp;€/mois d'hébergement.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid rgba(17,17,17,.12);border-radius:18px;padding:26px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -26px rgba(17,17,17,.18)">
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:24px;margin:0">Essentiel</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:12px 0 18px">
+          <span style="font-family:Alegreya,serif;font-weight:800;font-size:44px;line-height:1;letter-spacing:-0.02em"><span data-count="39">39</span>&nbsp;€</span>
+          <span style="font-size:15px;color:rgba(17,17,17,.55);font-weight:600">/ mois</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Site professionnel de 1 à 5 pages</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Hébergement inclus</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Maintenance et mises à jour</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">1 modification par mois</span></div>
+        </div>
+      </div>
+      <div data-reveal="" data-delay="100" style="background:#FFFFFF;border:2px solid #C97B3A;border-radius:18px;padding:26px;position:relative;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -26px rgba(201,123,58,.35)">
+        <span style="position:absolute;top:-13px;left:24px;background:#C97B3A;color:#111111;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:5px 12px">Pour être trouvé sur Google</span>
+        <h3 style="font-family:Alegreya,serif;font-weight:700;font-size:24px;margin:0">Visibilité</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin:12px 0 18px">
+          <span style="font-family:Alegreya,serif;font-weight:800;font-size:44px;line-height:1;letter-spacing:-0.02em"><span data-count="69">69</span>&nbsp;€</span>
+          <span style="font-size:15px;color:rgba(17,17,17,.55);font-weight:600">/ mois</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Tout ce que comprend l'offre Essentiel</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Fiche Google Business créée et tenue à jour</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Un article SEO par mois</span></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#9C5C2C;font-weight:700">•</span><span style="font-size:15.5px;line-height:1.5;color:rgba(17,17,17,.72)">Suivi de votre position dans les recherches</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:900px;margin:0 auto;padding:0 22px 56px">
+    <h2 data-reveal="" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(24px,5.6vw,32px);line-height:1.15;margin:0 0 20px;letter-spacing:-0.015em">Ce qu'on gère à votre place</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+      <div data-reveal="" data-delay="0" style="background:rgba(201,123,58,.10);border-radius:12px;padding:16px 18px;font-size:16px;font-weight:600;color:#111111;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(201,123,58,.16);transform:translateY(-3px)">Le nom de domaine</div>
+      <div data-reveal="" data-delay="60" style="background:rgba(201,123,58,.10);border-radius:12px;padding:16px 18px;font-size:16px;font-weight:600;color:#111111;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(201,123,58,.16);transform:translateY(-3px)">L'hébergement</div>
+      <div data-reveal="" data-delay="120" style="background:rgba(201,123,58,.10);border-radius:12px;padding:16px 18px;font-size:16px;font-weight:600;color:#111111;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(201,123,58,.16);transform:translateY(-3px)">La sécurité du site</div>
+      <div data-reveal="" data-delay="180" style="background:rgba(201,123,58,.10);border-radius:12px;padding:16px 18px;font-size:16px;font-weight:600;color:#111111;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(201,123,58,.16);transform:translateY(-3px)">L'optimisation pour Google</div>
+      <div data-reveal="" data-delay="240" style="background:rgba(201,123,58,.10);border-radius:12px;padding:16px 18px;font-size:16px;font-weight:600;color:#111111;transition:background .25s ease,transform .25s ease" style-hover="background:rgba(201,123,58,.16);transform:translateY(-3px)">Le support, par téléphone ou e-mail</div>
+    </div>
+  </section>
+
+  <section style="padding:0 14px 22px">
+    <div data-reveal="" style="max-width:760px;margin:0 auto;background:#111111;border-radius:22px;padding:clamp(24px,5.5vw,44px);color:#FFFFFF;text-align:center;border:2px solid #2A2A2A;position:relative;overflow:hidden;box-shadow:0 24px 60px -32px rgba(17,17,17,.35)">
+      <div aria-hidden="true" style="position:absolute;bottom:-120px;left:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,123,58,.20),rgba(201,123,58,0) 70%);animation:vlFloat 14s ease-in-out infinite;pointer-events:none"></div>
+      <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;background:#C97B3A;color:#111111;border-radius:999px;padding:6px 12px;position:relative">{{ placesLabel }}</span>
+      <h2 style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.6vw,40px);line-height:1.1;margin:18px 0 0;letter-spacing:-0.015em;text-wrap:pretty;position:relative">Site créé gratuitement, 15&nbsp;€/mois d'hébergement, votre avis en échange.</h2>
+      <p style="font-family:Karla,sans-serif;font-size:clamp(16px,4.2vw,19px);line-height:1.6;color:rgba(255,255,255,.75);margin:16px auto 0;max-width:520px;text-wrap:pretty;position:relative">Écrivez-moi le nom de votre commerce et votre ville. Je vous réponds sous 24&nbsp;h pour fixer l'appel de 20 minutes.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:stretch;margin:26px auto 0;max-width:400px;position:relative">
+        <a href="{{ mailto }}" style="display:block;background:#C97B3A;color:#111111;text-decoration:none;font-family:Karla,sans-serif;font-weight:700;font-size:17px;padding:17px 22px;border-radius:12px;box-shadow:0 3px 0 #8A5220;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 6px 0 #8A5220,0 12px 26px rgba(201,123,58,.35)" style-active="transform:translateY(2px);box-shadow:0 1px 0 #8A5220">Réserver ma place gratuite</a>
+        <a href="{{ mailto }}" style="font-size:15px;color:rgba(255,255,255,.65);text-decoration:none;font-weight:600;transition:color .2s ease" style-hover="color:#C97B3A">louisclement2001@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="confiance" style="max-width:900px;margin:0 auto;padding:12px 22px 56px">
+    <h2 data-reveal="" style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,6.2vw,38px);line-height:1.12;margin:0 0 26px;letter-spacing:-0.015em">Ils me font confiance</h2>
+
+    <!--
+      État vide : aucun client à afficher pour l'instant (aucun logo ni témoignage inventé).
+      Pour ajouter un vrai client, remplacer un bloc .vl-trust-slot par :
+      <figure style="margin:0;text-align:center">
+        <img src="chemin-vers-logo-ou-photo.jpg" alt="[Nom du commerce]" style="width:96px;height:96px;object-fit:cover;border-radius:50%;display:block;margin:0 auto;border:1px solid rgba(17,17,17,.12)">
+        <figcaption style="margin-top:10px;font-size:14px;color:rgba(17,17,17,.55)">Nom du commerce · Ville</figcaption>
+      </figure>
+    -->
+    <div style="display:flex;flex-wrap:wrap;gap:22px">
+      <div class="vl-trust-slot" style="width:96px;height:96px;border-radius:50%;border:2px dashed rgba(201,123,58,.45);background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px">
+        <span style="font-size:11px;font-weight:600;color:rgba(17,17,17,.55);line-height:1.3">Client à venir</span>
+      </div>
+      <div class="vl-trust-slot" style="width:96px;height:96px;border-radius:50%;border:2px dashed rgba(201,123,58,.45);background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px">
+        <span style="font-size:11px;font-weight:600;color:rgba(17,17,17,.55);line-height:1.3">Client à venir</span>
+      </div>
+      <div class="vl-trust-slot" style="width:96px;height:96px;border-radius:50%;border:2px dashed rgba(201,123,58,.45);background:#FFFFFF;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px">
+        <span style="font-size:11px;font-weight:600;color:rgba(17,17,17,.55);line-height:1.3">Client à venir</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:900px;margin:0 auto;padding:24px 22px 110px;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(17,17,17,.12)">
+    <span style="font-family:Alegreya,serif;font-weight:700;font-size:17px">Vitrine Locale</span>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+      <span style="font-size:14px;color:rgba(17,17,17,.55)">Lille · Hauts-de-France · Micro-entreprise</span>
+      <a href="#mentions-legales" class="footer-legal-link" style="font-size:14px;color:rgba(17,17,17,.55);text-decoration:none;font-weight:500;transition:color .2s ease">Mentions légales</a>
+    </div>
+  </footer>
+
+  <section id="mentions-legales" style="max-width:760px;margin:0 auto;padding:48px 22px 70px;border-top:1px solid rgba(17,17,17,.12)">
+    <h2 style="font-family:Alegreya,serif;font-weight:800;font-size:clamp(26px,5.5vw,34px);line-height:1.15;letter-spacing:-0.015em;margin:0 0 28px">Mentions légales</h2>
+
+    <div style="margin-bottom:26px">
+      <h3 style="font-family:Karla,sans-serif;font-weight:700;font-size:17px;color:#111111;margin:0 0 8px">Éditeur du site</h3>
+      <p style="font-family:Karla,sans-serif;font-size:15px;line-height:1.7;color:rgba(17,17,17,.72);margin:0">
+        Clément Louis — Lunaa Studio<br>
+        Entreprise individuelle (micro-entrepreneur)<br>
+        SIRET : 888 906 807 00019<br>
+        Adresse : 173 avenue de Dunkerque, 59000 Lille<br>
+        Email : contact@lunaa-studio.com
+      </p>
+    </div>
+
+    <div style="margin-bottom:26px">
+      <h3 style="font-family:Karla,sans-serif;font-weight:700;font-size:17px;color:#111111;margin:0 0 8px">Directeur de la publication</h3>
+      <p style="font-family:Karla,sans-serif;font-size:15px;line-height:1.7;color:rgba(17,17,17,.72);margin:0">Clément Louis</p>
+    </div>
+
+    <div style="margin-bottom:26px">
+      <h3 style="font-family:Karla,sans-serif;font-weight:700;font-size:17px;color:#111111;margin:0 0 8px">Hébergement</h3>
+      <p style="font-family:Karla,sans-serif;font-size:15px;line-height:1.7;color:rgba(17,17,17,.72);margin:0">
+        Cloudflare, Inc.<br>
+        101 Townsend St, San Francisco, CA 94107, États-Unis<br>
+        <a href="https://www.cloudflare.com">https://www.cloudflare.com</a>
+      </p>
+    </div>
+
+    <div style="margin-bottom:8px">
+      <h3 style="font-family:Karla,sans-serif;font-weight:700;font-size:17px;color:#111111;margin:0 0 8px">Propriété intellectuelle</h3>
+      <p style="font-family:Karla,sans-serif;font-size:15px;line-height:1.7;color:rgba(17,17,17,.72);margin:0">L'ensemble des contenus (textes, visuels, structure du site) est protégé. Toute reproduction sans autorisation est interdite.</p>
+    </div>
+
+    <a href="#top" style="display:inline-block;margin-top:18px;font-size:14px;color:rgba(17,17,17,.55);text-decoration:none;font-weight:600">↑ Retour en haut</a>
+  </section>
+
+  <div ref="{{ dockRef }}" style="position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(245,241,232,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(17,17,17,.12);transform:translateY(130%);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .3s ease">
+    <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px">
+      <div style="flex:1;min-width:0">
+        <div style="font-family:Alegreya,serif;font-weight:700;font-size:16px;line-height:1.2">{{ placesLabel }}</div>
+        <div style="font-size:13px;color:rgba(17,17,17,.55);font-weight:500">Site gratuit · 15 €/mois d'hébergement</div>
+      </div>
+      <a href="{{ mailto }}" style="flex:0 0 auto;background:#C97B3A;color:#111111;text-decoration:none;font-weight:700;font-size:15px;padding:13px 18px;border-radius:11px;box-shadow:0 3px 0 #8A5220;transition:transform .2s ease" style-hover="transform:translateY(-2px)">Réserver</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;placesLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Offre de lancement&quot;},&quot;placesTotal&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:3,&quot;min&quot;:1,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Offre de lancement&quot;},&quot;mailSubject&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Je réserve une place gratuite — Vitrine Locale&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Offre de lancement&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.rootRef = React.createRef();
+    this.headerRef = React.createRef();
+    this.progressRef = React.createRef();
+    this.dockRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const revealEls = Array.from(root.querySelectorAll("[data-reveal]"));
+    const show = (el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.filter = "none";
+    };
+
+    if (reduce) {
+      revealEls.forEach(show);
+    } else {
+      revealEls.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(22px)";
+        el.style.willChange = "opacity, transform";
+        el.style.transition = "opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1)";
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const d = parseInt(e.target.getAttribute("data-delay") || "0", 10);
+          setTimeout(() => show(e.target), d);
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealEls.forEach((el) => io.observe(el));
+      this._io = io;
+      // safety net: never leave content hidden
+      this._fallback = setTimeout(() => revealEls.forEach(show), 3000);
+    }
+
+    // places bars fill in on view
+    const bars = Array.from(root.querySelectorAll("[data-bar]"));
+    const barIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const inner = e.target.querySelector("[data-bar-inner]");
+        const fill = e.target.getAttribute("data-bar-fill") || "#2E2E2E";
+        const delay = parseInt(e.target.getAttribute("data-bar-delay") || "0", 10);
+        if (inner) {
+          inner.style.background = fill;
+          setTimeout(() => { inner.style.width = "100%"; }, reduce ? 0 : delay);
+        }
+        barIo.unobserve(e.target);
+      });
+    }, { threshold: 0.4 });
+    bars.forEach((b) => barIo.observe(b));
+    this._barIo = barIo;
+
+    // price count-up
+    const counters = Array.from(root.querySelectorAll("[data-count]"));
+    const cIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const target = parseInt(e.target.getAttribute("data-count"), 10);
+        cIo.unobserve(e.target);
+        if (reduce) { e.target.textContent = String(target); return; }
+        const dur = 900, t0 = performance.now();
+        const tick = (t) => {
+          const p = Math.min(1, (t - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          e.target.textContent = String(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        e.target.textContent = "0";
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((c) => cIo.observe(c));
+    this._cIo = cIo;
+
+    this._onScroll = () => {
+      const doc = document.documentElement;
+      const y = window.scrollY || doc.scrollTop || 0;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const p = Math.min(1, y / max);
+      if (this.progressRef.current) this.progressRef.current.style.width = (p * 100).toFixed(2) + "%";
+      const h = this.headerRef.current;
+      if (h) {
+        const on = y > 24;
+        h.style.background = on ? "rgba(245,241,232,.86)" : "rgba(245,241,232,0)";
+        h.style.borderBottomColor = on ? "rgba(17,17,17,.12)" : "rgba(17,17,17,0)";
+        h.style.boxShadow = on ? "0 10px 30px -24px rgba(17,17,17,.3)" : "none";
+      }
+      const dock = this.dockRef.current;
+      if (dock) {
+        const nearEnd = y + window.innerHeight > doc.scrollHeight - 260;
+        const on = y > window.innerHeight * 0.85 && !nearEnd;
+        dock.style.transform = on ? "translateY(0)" : "translateY(130%)";
+        dock.style.opacity = on ? "1" : "0";
+      }
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    window.addEventListener("resize", this._onScroll);
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    window.removeEventListener("resize", this._onScroll);
+    clearTimeout(this._fallback);
+    [this._io, this._barIo, this._cIo].forEach((o) => o && o.disconnect());
+  }
+
+  renderVals() {
+    const total = this.props.placesTotal ?? 3;
+    const left = Math.max(0, Math.min(total, this.props.placesLeft ?? 2));
+    const subject = encodeURIComponent(this.props.mailSubject ?? "Je réserve une place gratuite — Vitrine Locale");
+    const body = encodeURIComponent(
+      "Bonjour Louis,\n\nJe souhaite réserver une des places gratuites.\n\nNom du commerce :\nVille :\nTéléphone :\nCe que je vends / mes services :\n\nMerci,"
+    );
+    return {
+      rootRef: this.rootRef,
+      headerRef: this.headerRef,
+      progressRef: this.progressRef,
+      dockRef: this.dockRef,
+      placesLabel: left + (left > 1 ? " places restantes sur " : " place restante sur ") + total,
+      places: Array.from({ length: total }, (_, i) => ({
+        fill: i < left ? "#C97B3A" : "#2E2E2E",
+        delay: 120 + i * 140
+      })),
+      mailto: "mailto:louisclement2001@gmail.com?subject=" + subject + "&body=" + body
+    };
+  }
+}
+</script>
+</body>
+</html>
